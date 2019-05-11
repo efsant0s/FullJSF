@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Aplicação show de bola</title>
+    </h:head>
+    <h:body>
+        <h:form class="form-group" style="height: 100%; width: 30%; border: 1px solid black; float: left;" >
+            <h:outputText  value="Digite a operação desejada(+,-,/,*)" />
+            <br/>
+            <h:selectOneMenu  value="#{calculatorView.calculadora.operacao}" >
+                <f:selectItem itemValue="+" itemLabel="Soma" />
+                <f:selectItem itemValue="-" itemLabel="subtração" />
+                <f:selectItem itemValue="/" itemLabel="divisão" />
+                <f:selectItem itemValue="*" itemLabel="multiplicação" />
+            </h:selectOneMenu>
+            <br/>
+            <h:outputText  value="Digite o primeiro valor desejado" />
+            <br/>
+            <h:inputText style="width: 100%; " value="#{calculatorView.calculadora.x}" />
+            <br/>
+            <h:outputText  value="Digite o segundo valor desejado" />
+            <br/>
+            <h:inputText style="width: 100%; " value="#{calculatorView.calculadora.y}" />
+            <br/>
+            <h:commandButton  class="btn btn-dark" value ="Salvar" actionListener="#{calculatorView.calcular()}"/>
+            <br/>
+            <h:outputText  value= "#{calculatorView.calculadora.result}" />
+            <br/>            
+            <h:commandButton   value="Teste banco" action="acessoBanco" /><br/>
+        </h:form>
+    </h:body>
+</html>
+
